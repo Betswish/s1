@@ -1,0 +1,14 @@
+dataset_path: shanchen/gpqa_diamond_mc_multilingual
+tag: gpqa
+task: gpqa_diamond_multi_th
+output_type: generate_until
+process_docs: problem
+process_results: !function utils.process_results
+validation_split: th
+test_split: th
+doc_to_text: problem
+doc_to_target: !function utils.doc_to_target_gpqa
+num_fewshot: 0
+generation_kwargs:
+  until: []
+  do_sample: false
